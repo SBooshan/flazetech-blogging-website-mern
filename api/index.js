@@ -11,7 +11,7 @@ const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 const bodyParser = require('body-parser');
-
+const path = require("path");
 
 
 
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://bsdk954:asishZB0GGq4JP84@cluster0.fsrwkih.mongodb.net/?retryWrites=true&w=majority');//asishZB0GGq4JP84
+mongoose.connect('mongodb+srv://booshanseyal:lEN6rI1AC184kvHB@cluster0.qhrvicw.mongodb.net/?retryWrites=true&w=majority');//asishZB0GGq4JP84
 
 app.post('/register', async (req,res) => {
   const {username,password} = req.body;
@@ -193,6 +193,11 @@ app.post('/post/:postId/comments', async (req, res) => {
   }
 });
 
+
+app.get("/", (req, res) => {
+app.use(express.static(path.resolve(__dirname, "client", "build")));
+res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 
 app.listen(4000);

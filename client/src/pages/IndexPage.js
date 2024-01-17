@@ -9,7 +9,7 @@ export default function IndexPage() {
     try {
       const url = searchQuery
         ? `http://localhost:4000/search?query=${searchQuery}`
-        : 'http://localhost:4000/post';
+        : `http://localhost:4000/post`;
 
       const response = await fetch(url);
       const fetchedPosts = await response.json();
