@@ -13,7 +13,7 @@ export default function PostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/post/${id}`);
+        const response = await fetch(`flazetech-blogging-website-mern-api.vercel.app/post/${id}`);
         const postInfo = await response.json();
         setPostInfo(postInfo);
       } catch (error) {
