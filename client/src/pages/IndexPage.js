@@ -8,8 +8,8 @@ export default function IndexPage() {
   const fetchPosts = async () => {
     try {
       const url = searchQuery
-        ? `http://localhost:4000/search?query=${searchQuery}`
-        : `http://localhost:4000/post`;
+        ? `flazetech-blogging-website-mern-api.vercel.app/search?query=${searchQuery}`
+        : `flazetech-blogging-website-mern-api.vercel.app/post`;
 
       const response = await fetch(url);
       const fetchedPosts = await response.json();
