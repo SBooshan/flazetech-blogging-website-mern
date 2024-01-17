@@ -26,7 +26,7 @@ export default function PostPage() {
 
   const handleCommentSubmit = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/post/${id}/comments`, {
+      const response = await fetch(`flazetech-blogging-website-mern-api.vercel.app/${id}/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
